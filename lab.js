@@ -1,6 +1,6 @@
 // رابط خدمة تشغيل اللغات الخارجية يوضع هنا بعد إعداد Cloudflare Worker.
 // لا تضع مفتاح API في هذا الملف لأنه عام ويمكن لأي زائر رؤيته.
-const RUNNER_URL = "";
+const RUNNER_URL = "https://mezo-code-runner.zaza-125125125.workers.dev/";
 const examples={
  html:`<!doctype html>\n<html lang="ar" dir="rtl">\n<head><meta charset="utf-8"><style>body{font-family:Arial;text-align:center;padding:35px;background:#17112b;color:#fff}h1{color:#f4c76b}button{padding:12px 20px;border:0;border-radius:10px;background:#f4c76b}</style></head>\n<body><h1>أهلاً بيك في MEZOO Lab ✨</h1><p>عدّل الكود واضغط تشغيل!</p><button onclick="document.querySelector('p').textContent='برافو! الكود اشتغل 🎉'">جرّبني</button></body>\n</html>`,
  javascript:`const name = "MEZOO";\nconsole.log("أهلاً يا " + name);\nconsole.log(2 + 3);`,
