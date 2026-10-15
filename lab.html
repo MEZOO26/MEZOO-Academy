@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17112b"><title>MEZOO Lab | أكاديمية ميزو</title>
+<link rel="stylesheet" href="lab.css">
+</head>
+<body>
+<header class="top"><div class="brand"><span class="logo">M</span><div><strong>MEZOO <b>LAB</b></strong><small>مختبر التعلّم والبرمجة</small></div></div><a class="back" href="./index.html">العودة للأكاديمية ↩</a></header>
+<main>
+<section class="hero"><p class="eyebrow">LEARN • CODE • CREATE</p><h1>اتعلّم البرمجة <em>بإيدك</em></h1><p>اكتب كودك، جرّبه، وتعلّم خطوة بخطوة. تجربة HTML وCSS وJavaScript تعمل داخل المتصفح، وتشغيل اللغات الأخرى يحتاج إعداد خدمة تشغيل خارجية.</p></section>
+<nav class="tabs"><button class="tab active" data-panel="editor">محرر الأكواد</button><button class="tab" data-panel="lessons">الدروس والاختبارات</button><button class="tab" data-panel="about">اللغات والإعداد</button></nav>
+<section id="editor" class="panel active"><div class="toolbar"><label for="language">لغة الكود</label><select id="language"><option value="html">HTML + CSS + JS</option><option value="javascript">JavaScript</option><option value="python">Python</option><option value="cpp">C++</option><option value="c">C</option><option value="java">Java</option><option value="csharp">C#</option><option value="php">PHP</option><option value="go">Go</option><option value="rust">Rust</option></select><button id="run" class="gold">▶ تشغيل الكود</button><button id="reset" class="subtle">إعادة المثال</button></div>
+<textarea id="code" spellcheck="false" aria-label="محرر الكود"><!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><style>body{font-family:Arial;text-align:center;padding:35px;background:#17112b;color:#fff}h1{color:#f4c76b}button{padding:12px 20px;border:0;border-radius:10px;background:#f4c76b}</style></head>
+<body><h1>أهلاً بيك في MEZOO Lab ✨</h1><p>عدّل الكود واضغط تشغيل!</p><button onclick="document.querySelector('p').textContent='برافو! الكود اشتغل 🎉'">جرّبني</button></body>
+</html></textarea>
+<div id="status" class="status">جاهز للتجربة</div><h3 class="preview-title">معاينة النتيجة</h3><iframe id="preview" title="معاينة الكود" sandbox="allow-scripts"></iframe><pre id="output" class="output" hidden></pre><p class="hint">تنبيه: المعاينة محصورة داخل الصفحة. لا تضع كلمات مرور أو مفاتيح سرية في الكود.</p></section>
+<section id="lessons" class="panel"><h2>ابدأ من هنا</h2><div class="cards"><article class="lesson"><span>01</span><h3>ما هي البرمجة؟</h3><p>البرمجة هي كتابة تعليمات يفهمها الكمبيوتر لتنفيذ مهمة.</p><button class="lesson-btn" data-load="intro">افتح المثال</button></article><article class="lesson"><span>02</span><h3>المتغيرات في JavaScript</h3><p>المتغير يخزّن قيمة نستخدمها لاحقًا.</p><button class="lesson-btn" data-load="vars">افتح المثال</button></article><article class="lesson"><span>03</span><h3>زر تفاعلي</h3><p>استخدم حدث النقر لتغيير محتوى الصفحة.</p><button class="lesson-btn" data-load="button">افتح المثال</button></article></div><div class="quiz"><h3>اختبار سريع</h3><p>أي وسم HTML يُستخدم لكتابة عنوان رئيسي؟</p><label><input type="radio" name="q" value="p"> &lt;p&gt;</label><label><input type="radio" name="q" value="h1"> &lt;h1&gt;</label><label><input type="radio" name="q" value="div"> &lt;div&gt;</label><button id="checkQuiz" class="gold">تحقّق من الإجابة</button><p id="quizResult" aria-live="polite"></p></div></section>
+<section id="about" class="panel"><h2>اللغات المتاحة</h2><p>المحرر يحتوي أمثلة للغات كثيرة. HTML وCSS وJavaScript يمكن معاينتها مباشرة هنا. لتشغيل Python وC++ وJava وغيرها، يلزم ربط خدمة تشغيل أكواد خارجية آمنة.</p><div class="cards"><article class="lesson"><h3>داخل المتصفح</h3><p>HTML · CSS · JavaScript</p><span class="pill">تعمل مباشرة</span></article><article class="lesson"><h3>عبر خدمة خارجية</h3><p>Python · C/C++ · Java · C# · PHP · Go · Rust وغيرها حسب مزود الخدمة.</p><span class="pill pending">تحتاج إعداد</span></article></div><h3>خطوات الربط باختصار</h3><ol><li>أنشئ خدمة تشغيل مثل Judge0 لدى مزوّد موثوق.</li><li>أنشئ Cloudflare Worker ليكون وسيطًا آمنًا بين الموقع والخدمة.</li><li>ضع رابط الـ Worker في ملف <code>lab.js</code> داخل <code>RUNNER_URL</code>.</li><li>احتفظ بمفتاح API داخل إعدادات Worker السرية فقط، وليس داخل ملفات الموقع العامة.</li></ol><p class="hint">ملفات GitHub Pages ثابتة؛ لا يمكنها تشغيل كل لغات البرمجة على الخادم وحدها.</p></section>
+<footer>© MEZOO Academy · تعلّم وجرّب وابتكر</footer>
+</main><script src="lab.js"></script></body></html>
