@@ -31,6 +31,8 @@ pre,code{overflow-wrap:anywhere;white-space:pre-wrap}
 @media(max-width:520px){.exercise-grid{grid-template-columns:1fr}.roadmap{grid-template-columns:1fr}.language-hero{gap:12px}}
 .creator-credit{padding:8px 14px;text-align:center;background:#0b1928;color:#eafcff;font-size:clamp(12px,2.8vw,15px);letter-spacing:.15px;border-bottom:1px solid rgba(64,196,200,.45)}.creator-credit strong{color:#40c4c8;font-weight:800}
 </style>
+ <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#111827">
 </head>
 <body>
 <div class="creator-credit" role="note" aria-label="رعاية الموقع">تم إنشاء هذا الموقع برعاية <strong>Programmer Mazen Jamal</strong></div>
@@ -325,5 +327,11 @@ document.querySelectorAll('.learn-lang').forEach(b=>b.addEventListener('click',(
 $('#closeLanguage').addEventListener('click',()=>$('#languageReader').classList.add('hidden'));
 
 $('#year').textContent=new Date().getFullYear();updateProgress();
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch(error => console.error(error));
+  });
+}
 </script>
 </body></html>
