@@ -1,4 +1,4 @@
-const CACHE_NAME = "me zoo-academy-v2".replace(" ", "-");
+const CACHE_NAME = "me zoo-academy-v3".replace(" ", "-");
 
 const APP_FILES = [
 "./",
