@@ -336,5 +336,29 @@ if ("serviceWorker" in navigator) {
       .catch(error => console.error(error));
   });
 }
+ let deferredInstallPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  installBtn.hidden = false;
+});
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) {
+    alert("لتثبيت MEZOO Academy، افتح قائمة Chrome ثم اختر إضافة إلى الشاشة الرئيسية.");
+    return;
+  }
+
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  installBtn.hidden = true;
+});
+
+window.addEventListener("appinstalled", () => {
+  installBtn.hidden = true;
+});
 </script>
 </body></html>
